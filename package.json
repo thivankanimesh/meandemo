@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node index.js",
+    "start": "npm run serve",
+    "thivanka": "node index.js"
+  },
+  "author": "thivanka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  },
+  "engines": {
+    "node": "8.10.0"
+  }
+}
