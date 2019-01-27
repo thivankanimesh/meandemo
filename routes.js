@@ -27,7 +27,7 @@ router.use(function timeLog(req, res, next) {
 
 // Routers
 router.get('/', function (req, res) {
-    res.send('Birds home page')
+    res.sendFile(__dirname+'/public/index.html')
 })
 
 router.get('/adduser', function (req, res) {
@@ -52,6 +52,15 @@ router.get('/adduser', function (req, res) {
 })
 
 router.get('/getuser', function (res, req) {
+
+   function name(){
+    User.findOne({'fname':req.query.fname},function(err,person){
+        if(err) return handleError(err);
+        return person.fname;
+    })
+   }
+
+    res.send(name())
 
     req.redirect("/")
 })
