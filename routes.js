@@ -11,14 +11,13 @@ db.once('open', function () {
     console.log('We are connected!!!')
 })
 
-
 // Schemas
-var studentSchema = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
     fname: String,
     lname: String,
     age: Number
 })
-var Student = mongoose.model('user', studentSchema)
+var User = mongoose.model('user', userSchema)
 
 // Middlewares
 router.use(function timeLog(req, res, next) {
@@ -39,9 +38,9 @@ router.get('/adduser', function (req, res) {
         "age": req.query.age
     }
 
-    var s1 = new Student(obj)
+    var user = new User(obj)
 
-    s1.save(function (error) {
+    user.save(function (error) {
         if (error) {
             console.log(error)
         }
